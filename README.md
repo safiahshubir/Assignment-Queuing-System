@@ -29,6 +29,7 @@ A. The requirements of the queueing system: 
        Category ‘B’ button - Technical Assistance
    
        Category ‘C’ button - Billing/Payment
+      
   2. Each service category should use a different range of number.
   3. A function to dispense the queue number.
 

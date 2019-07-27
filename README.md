@@ -1,5 +1,6 @@
 # Assignment-Queuing-System
 A. Problem specification 
+
 Your company, a regional software developer with 455 staffs, has received 3 new projects this month: two on-line games, and a queuing system for a local hospital. All three of the projects are equally important, with certain level of technical difficulties and challenges. You have been instructed by the CEO to lead a team of 4-5 members, to handle one of the project. You have been given 6 weeks to complete the project and prepare a demo for the board of directors. The descriptions of the three projects are enclosed as appendices. You will be assigned one of these projects once you have formed the team. 
 
 B. Group formation 

@@ -1,0 +1,65 @@
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+import sun.audio.*;
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+
+
+
+        public static void soundwav(String fname) {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(fname);
+            AudioStream AuStream = new AudioStream(fis);
+            AudioData AuData = AuStream.getData();
+            AudioDataStream ADS = null;
+            ContinuousAudioDataStream loop = null;
+            ADS = new AudioDataStream(AuData);
+            //        loop = new ContinuousAudioDataStream(MD);
+            AudioPlayer.player.start(ADS);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    private static void messageServing(){
+        String numstr = String.format("%04d",serveno);
+        soundwav("Calling-Tone4.wav");
+        char[] ch=numstr.toCharArray();
+        for (char a : ch){
+            String filename = "Speak-"+String.valueOf(a)+".wav";
+            soundwav(filename);
+            try {
+                Thread.sleep(800);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Frame1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }

@@ -37,11 +37,17 @@ A. The requirements of the queueing system: 
    Service counter:
   1. There are only 4 service counters available on the customer service
   department, where each counter serves different category of the services:
+  
        General Enquiry - Counter 1 and 2
+      
        Technical Assistance - Counter 3
+      
        Billing/Payment - Counter 4
+      
   2. The service counters are able to perform 2 functions:
+  
        Next queue number - Call the next queue number
+      
        Repeat queue number - Repeat the latest queue number for a maximum of 3 times
 
 
